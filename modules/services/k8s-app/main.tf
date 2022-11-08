@@ -18,13 +18,13 @@ resource "kubernetes_deployment" "app" {
     name = var.name
   }
 
-  # As k8s is flexible we need to specify what to target
-  # even if it´s defined in the same resource block
-  selector {
-    match_labels = local.pod_labels
-  }
-
   spec {
+    # As k8s is flexible we need to specify what to target
+    # even if it´s defined in the same resource block
+    selector {
+      match_labels = local.pod_labels
+    }
+
     replicas = var.replicas
 
     # Definition of the Pod Template (what containers to run, ports, env variable, etc)
