@@ -8,9 +8,9 @@ variable "image" {
   description = "The docker image to run"
 }
 
-variable "name" {
+variable "container_port" {
   type = number
-  description = "container_port"
+  description = "The port the docker image listens on"
 }
 
 variable "replicas" {
